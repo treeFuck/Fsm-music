@@ -1,0 +1,705 @@
+*{
+	margin: 0;
+	padding: 0;
+	color: rgba(255,250,200,1);
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+@font-face{
+	font-family:logo;
+	src:url(../fonts/WhiteOleanderSlanted.ttf);
+}
+@font-face{
+	font-family: shouxie;
+	src:url(../fonts/shouxie.otf);
+}
+::-webkit-input-placeholder{
+    color: #a1a1a1;
+}
+#nav{
+	position: fixed;
+	top: 0%;
+	height: 80px;
+	width: 100%;
+	background-color: rgba(58,55,50,0.7);
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	/*overflow: hidden; */
+	z-index: 50;
+}
+#content{
+	width: 1200px;
+	height: auto;
+	background-color: rgba(25,25,25,0.3);
+	margin: 80px auto;
+}
+#bg{
+	display: block;
+    width: 100%;
+    min-width: 1200px; 
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: -100;
+}
+
+
+
+/*导航栏*/
+#nav>ul{
+	margin: 0 auto;
+	height: 80px;
+	width: 1100px;
+}
+#nav>ul>li{
+	float: left;
+	height: 70px;
+	width: 110px;
+	margin: 5px 5px;
+	font-size: 18px;
+	text-align: center;
+	color: #eee;
+	line-height: 70px;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+#nav>ul>li:hover{
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 20px;
+	color: #000;
+}
+#nav>ul>#logo{
+	width: 173px;
+	margin-left: 20px;
+	font-family: logo;
+	font-size: 70px;
+	line-height: 90px;
+	font-weight: bold;
+	color: #f40;
+	text-shadow: 3px 3px #000;
+}
+#nav>ul>#search{
+	width: 250px;
+	position: relative;
+}
+#nav>ul>#search>input{
+	display: block;
+	height: 30px;
+	width: 200px;
+	margin: 20px auto;
+	color: #eee;
+	border: 1.5px solid #eee;
+	border-radius: 20px;
+	outline: none;
+	text-indent: 1em;
+	background: url(../icon/sousuo.png) no-repeat 170px; 
+}
+#nav>ul>#search:hover>input{
+	color: #000;
+}
+#nav>ul>#search>ul{
+	display: none;
+	width: 250px;
+	background-color: #c2c2c0;
+	position: absolute;
+	top: 75px;
+	box-shadow: 0px 4px 7px #333;
+    border-radius: 15px;
+}
+#nav>ul>#search>ul>li{
+	height: 30px;
+	width:200px;
+	margin: 0  auto;
+	font-size: 13px;
+	color: #000;
+	line-height: 40px;
+	border-bottom: 0.5px solid #000;
+}
+#nav>ul>#search>ul>li:hover{
+	font-weight: bold;
+}
+#nav>ul>#user{
+	width: 250px;
+}
+
+
+
+/*歌单推荐*/
+#recommend-list{               /*容器*/                
+	width: 1200px;
+	height: 500px;
+	margin: 80px auto;
+	position: relative;
+}
+#recommend-list>h2{
+	height: 80px;
+	font-size: 35px;
+	text-align: center;
+	line-height: 100px;
+}
+#recommend-list>p{
+	height: 60px;
+	font-size: 23px;
+	text-align: center;
+	line-height: 60px;
+}
+#recommend-list>#photos{        /*轮播图图片容器*/
+	width: 1200px;
+	height: 336px;
+	position: relative;
+	overflow: hidden;
+}
+#recommend-list>#linebar{       /*轮播图下标容器*/
+	width: 1200px;
+	height: 31px;
+	text-align: center;
+}
+#recommend-list>ul>#leftarrow,  /*轮播图左右标*/
+#recommend-list>ul>#rightarrow{
+	width: 40px;
+	height: 272.32px;
+	cursor: pointer;
+	font-size: 35px;
+	color: #eee;
+	line-height: 272px;
+	text-align: center;
+	position: absolute;
+	top: 64.7%;
+	margin-top: -120px;
+	background-color: rgba(200,0,11,0.3);
+    transition: all 0.5s;
+}
+#recommend-list>ul>#leftarrow{  /*左右标样式*/
+	left: -40px;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+#recommend-list>ul>#rightarrow{
+	right: -40px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+#recommend-list>ul>#leftarrow:hover,
+#recommend-list>ul>#rightarrow:hover{
+	color: #000;
+	background-color: rgba(200,0,11,0.6);
+}
+#recommend-list>#photos>li{        /*轮播图图片具体样式*/
+	position: absolute;
+	width: 730px;
+	height: 336px;
+	transition: all 0.5s;
+}
+#recommend-list>#photos>li>img{
+	width: 730px;
+	opacity: 0.95;
+}
+#recommend-list>#photos>#list1{    /*前三张展示出来*/
+	z-index: 2;
+	transform-origin: 50% 100%;
+	transform: translateX(-69px) scale(0.81);
+}
+#recommend-list>#photos>#list2{
+	box-shadow: 0 0 20px -5px #000;  
+	z-index: 3;
+	transform-origin: 50% 100%;
+	transform: translateX(235px);
+}
+#recommend-list>#photos>#list3{
+	z-index: 2;
+	transform-origin: 50% 100%;
+	transform: translateX(539px) scale(0.81);
+}
+#recommend-list>#photos>#list4,    /*后数张隐藏*/
+#recommend-list>#photos>#list5,
+#recommend-list>#photos>#list6,
+#recommend-list>#photos>#list7,
+#recommend-list>#photos>#list8{
+	transform-origin: 50% 100%;
+	transform: translateX(235px) scale(0.81);
+}
+#recommend-list>#linebar>li{       /*下标样式*/
+	display: inline-block;
+	width: 35px;
+	height: 3px;
+	background-color: #ccc;
+}                                  /*给list2的点击添加动效*/
+#recommend-list>#photos>.warp{     /*下盖罩*/
+	width: 730px;
+	height: 336px;
+	position: absolute;
+	top: 100%;
+	left: 235px;
+	transition: all 0.5s;
+	z-index: 4;
+}
+#recommend-list>#photos>.warp>img{ /*盖罩里放'点击播放'图标*/
+	display: block;
+	width: 80px;
+	margin: 128px auto;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+#recommend-list>#photos:hover .warp{ /*hover下盖罩上移*/
+	top: 0%;
+}
+#recommend-list>#photos>.warp>img:hover{
+	width: 100px;
+	margin: 118px auto;
+}
+
+
+
+/*单曲推荐*/
+#recommend-song{
+	height: 1300px;
+	width: 1000px;
+	margin: 80px auto;
+	border: 0.5px solid rgba(255,250,200,1);
+}
+#recommend-song>h2{
+	height: 80px;
+	font-size: 35px;
+	text-align: center;
+	line-height: 100px;
+}
+#recommend-song>p{
+	height: 60px;
+	font-size: 23px;
+	text-align: center;
+	line-height: 60px;
+}
+#recommend-song>div{
+	height: 270px;
+	width: 1000px;
+	position: relative;
+    overflow: hidden;
+}
+#recommend-song>div>div{
+	float: left;
+}
+#recommend-song>div>.song{
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
+	margin: 10px 10px;
+	box-shadow: 0 0 25px -5px #000;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+#recommend-song>div>.song>img{
+    width: 250px;
+    transition: all 0.85s;
+}
+#recommend-song>div>.song>.top{            /*歌曲信息（隐藏）*/
+    height: 50%;
+    width: 100%;
+    background-color: rgba(58,65,65,0.7);
+    position: absolute;
+    bottom: 100%;
+    transition: all 0.65s;
+}
+#recommend-song>div>.song>.bottom{
+    height: 50%;
+    width: 100%;
+    background-color: rgba(58,65,65,0.7);
+    position: absolute;
+    top: 100%;
+    transition: all 0.65s;         
+}
+#recommend-song>div>.song>.top>.songName{   /*歌曲名（隐藏）*/
+	height: 30px;
+    line-height: 30px;
+    margin-top: 40px; 
+	color: rgba(255, 68, 0, 1);
+	font-size: 25px;
+	font-weight: bold;
+    text-align: center;
+}
+#recommend-song>div>.song>.top>.songauthor{ /*歌手（隐藏）*/
+	height: 50px;
+	line-height: 50px;
+	color: rgba(255, 68, 0, 1);
+	font-size: 18px;
+    text-align: center;    
+}
+#recommend-song>div>.song>.bottom>img{    /*播放图标（隐藏）*/
+	display: block;
+	width: 55px;
+	margin: 35px auto;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+#recommend-song>div>.song:hover{          /*hover 改变样式*/
+	box-shadow: 0 0 20px 5px rgba(255, 68, 0, 0.7);
+}
+#recommend-song>div>.song:hover>img{        
+	filter: blur(2px);                  
+}
+#recommend-song>div>.song:hover .bottom{    
+	top: 50%;
+}
+#recommend-song>div>.song:hover .top{
+	bottom: 50%;
+}
+#recommend-song>div>.song>.bottom>img:hover{
+	width: 65px;
+	margin: 30px auto;
+}
+#recommend-song>div>.music-write{        /*制造行页面*/
+	height: 240px;
+	width: 720px;
+	margin: 10px 5px;
+}
+#recommend-song>div>.music-write>div{
+	height: 59px;
+	width: 640px;
+	margin: 0 auto;
+	border-bottom: 1px solid rgba(255,250,200,1);
+}
+#recommend-song>div>.music-letter{      /*文字样式*/
+	height: 240px;
+	width: 720px;
+	margin: 10px 5px;
+	color: #f40;
+	font-family: shouxie;
+	font-size: 30px;
+	line-height: 60px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 0.1em;
+	text-shadow: 1.5px 1.5px #000;
+	position: absolute;
+	top: 10px;
+	transition: all 1s;
+}
+#recommend-song>.right>.music-letter{   /*hover触发*/
+	left: -720px;
+}
+#recommend-song>.right:hover .music-letter{   
+	left: 0;
+}
+#recommend-song>.left>.music-letter{
+	right: -720px;
+}
+#recommend-song>.left:hover .music-letter{
+	right: 0;
+}
+
+
+
+/*分类推荐*/
+#recommend-topic{
+	width: 1000px;
+	height: 1140px;
+	margin: 80px auto;
+	border-bottom: 2px solid #eee;
+}
+#recommend-topic>h2{
+	height: 80px;
+	font-size: 35px;
+	text-align: center;
+	line-height: 80px;
+}
+#recommend-topic>p{
+	height: 60px;
+	font-size: 23px;
+	text-align: center;
+	line-height: 60px;
+}
+#recommend-topic>div{
+	width: 1000px;
+	height: 250px;
+}
+#recommend-topic>div>.songSort{
+	float: left;
+	height: 250px;
+	width: 248px;
+	border-left: 2px solid #eee;
+	border-bottom-right-radius: 20px;
+	position: relative;
+	overflow: hidden;
+}
+#recommend-topic>div>.songSort>h2{
+	margin: 60px 0 0 40px;
+}
+#recommend-topic>div>.songSort>div{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(123,123,123,0.3);
+	position: absolute;
+	left: -100%;
+	top: 0%;
+	transition: all 0.5s;
+}
+#recommend-topic>div>.songSort>div>p{
+	display: block;
+	height: 100px;
+	margin: 120px 0 0 40px;
+	font-size: 17px;
+	line-height: 30px;
+}
+#recommend-topic>div>.songSort>div>img{
+	width: 40px;
+	position: absolute;
+	top: 80%;
+	left: 80%;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+#recommend-topic>div>.songSort:hover>div{
+	left: 0;
+}
+#recommend-topic>div>.songSort>div>img:hover{
+	width: 55px;
+	top: 75%;
+	left: 75%;
+}
+#recommend-topic>div>ul{
+	height: 218px;
+	width: 720px;
+	float: left;
+	margin: 10px 0 10px 28px;
+	margin-left: 27px; 
+	border-right: 2px solid #f40;
+	border-bottom: 2px solid #f40;
+	border-bottom-left-radius: 50px;
+}
+#recommend-topic>div>ul>li{
+	height: 200px;
+	width: 200px;
+	float: left;
+	margin: 9px 20px;
+	box-shadow: 0 0 15px -5px #eee;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	transition: all 0.7s; 
+
+}
+#recommend-topic>div>ul>li>img{             
+	width: 200px;
+	opacity: 0.9;
+	transition: all 1s;
+}
+#recommend-topic>div>ul>li>.bottom{           
+	height: 50%;
+	width: 100%;
+	background-color: rgba(58,55,50,0.7);
+	position: absolute;
+	top: 100%;
+	transition: all 0.7s;
+}
+#recommend-topic>div>ul>li>.top{            
+	height: 50%;
+	width: 100%;
+	background-color: rgba(58,55,50,0.7);
+	position: absolute;
+	bottom: 100%;
+	transition: all 0.7s;
+}
+#recommend-topic>div>ul>li>.top>.songName{   
+	height: 40px;
+    margin-top: 40px;
+    line-height: 40px;
+	color: rgba(255, 68, 0, 1);
+	font-size: 19px;
+    text-align: center;
+}
+#recommend-topic>div>ul>li>.top>.songauthor{ 
+	height: 20px;
+	line-height: 20px;
+	color: rgba(255, 68, 0, 0.9);
+	font-size: 14px;
+    text-align: center;    
+}
+#recommend-topic>div>ul>li>.bottom>img{    
+	display: block;
+	width: 40px;
+	margin: 30px auto;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+#recommend-topic>div>ul>li:hover{
+	box-shadow: 0 0 20px 5px rgba(255, 68, 0, 0.7);
+}
+#recommend-topic>div>ul>li:hover>img{        
+	filter: blur(2px);                  
+}
+#recommend-topic>div>ul>li:hover .bottom{    
+	top: 50%;
+}
+#recommend-topic>div>ul>li:hover .top{
+	bottom: 50%;
+}
+#recommend-topic>div>ul>li>.bottom>img:hover{
+	width: 56px;
+	margin: 22px auto;
+}
+
+
+
+/*底部*/
+#bottom{
+	width: 1200px;
+	height: 750px;
+	margin: 180px auto;
+}
+#bottom>.en{
+	display: block;
+	height: 150px;
+	width: 100%;
+	font-family: logo;
+	font-size: 90px;
+    text-align: center;
+    line-height: 150px;
+    text-shadow: 2px 2px #000;   
+}
+#bottom>.ch{
+	display: block;
+	height: 40px;
+	width: 100%;
+	font-family: shouxie;
+	font-size: 40px;
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px #000;   
+}
+#bottom>div{
+	width: 500px;
+	height: 150px;
+	margin: 0 100px 0 600px;
+	color: #f40;
+	font-size: 60px;
+    text-align: center;
+    line-height: 150px;  
+}
+#bottom>div>span{
+	font-family: logo;
+	font-size: 90px;
+	line-height: 150px;
+	font-weight: bold;
+	color: #f40;
+	text-shadow: 3px 3px #000;
+}
+
+
+#audio{
+	width: 100%;
+	height: 150px;
+	position: fixed;
+	bottom: -75px;
+	z-index: 100;
+	transition: all 0.6s;
+}
+#audio>div{
+	width: 1300px;
+	height: 2000px;
+	margin: 0 auto;
+	position: relative;
+}
+#audio:hover{
+	bottom: 0;
+}
+#audio>div>#music-img{
+	display: block;
+	height: 150px;
+	width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px -5px #000;
+	opacity: 1;
+	transition: all 0.6s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#audio:hover>div>#music-img{
+	opacity: 0.5;
+}
+#audio>div>audio{
+	display: block;	
+	outline: none;
+	width: 950px;
+	height: 50px;
+	opacity: 0.7;
+	transition: all 0.6s;
+	position: absolute;
+	top: 75px;
+	left: 250px;
+}
+#audio>div>div{
+	width: 95px;
+	height: 45px;
+	border: 2.5px solid #f40;
+	border-radius: 10px;
+	background-color: rgba(255, 68, 0, 0.5);
+	color: #eee;
+	font-weight: bold;
+	line-height: 45px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.4s;
+	position: absolute;
+	top: 75px;
+}
+#audio>div>#pre{
+	left: 150px;
+}
+#audio>div>#next{
+	right: 0;
+}
+#audio>div>div:hover{
+	color: #000;
+	background-color: #f40;
+}
+#audio>div>#musicDel{
+	display: block;
+	height: 40px;
+	width: 500px;
+	color: #f40;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 40px;
+	text-shadow: 1.5px 1.5px #000;
+	position: absolute;
+	top: 35px;
+	left: 160px;
+}
+#audio>div>#songList{
+	width: 300px;
+	height: 120px;
+	transition: all 0.5s;
+	position: absolute;
+	top: 0;
+	left: -400px;
+}
+#audio>div>#songList>li{
+	width: 300px;
+	height: 30px;
+	line-height: 30px;
+}
+#audio:hover>div>#songList{
+	left: -100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="change_container">
+     	    <h2>Welcome To <span> @Fsm</span></h2> 
+         	<h2>Welcome To <span> @Fsm</span></h2>
+         	<p>音乐，<br><br>尊重孤独。</p> 
+         	<p>但请相信，<br><br>在这里，<br><br>你并不孤独。</p> 
+       	    <button type='button' onclick='toSingUp()'>去注册</button>  	    
+       	    <button type='button' onclick='toLogin()'>去登录</button>
+        </div>
+        <div class="form_container">
+     	    <form>
+         	    <h1 id="form_h">LOGIN</h1>
+         	    <div class="input_lebal">
+         		    <input id="nameInput" type="text" placeholder="用户名"  autocomplete="off" onblur='judgeUser()' onfocus='freeUserJudge()'/>
+                    <img src="icon/user.png"/>
+      			</div>
+                <div class="judge"></div>
+         	    <div class="input_lebal">
+      		        <input id="passInput" type="password" placeholder="密码"  autocomplete="off" onfocus='freePassJudge()'/>
+                    <img src="icon/password.png"/>
+          		</div>
+          		<div class="judge"></div>
+         	    <button id="form_button" type='button' onclick='loginSubmit()'>确定</button>
+         	</form>
+        </div>
+    </div>
+    <img id="bg" src="img/bg5.jpg">
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

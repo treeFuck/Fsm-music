@@ -1,0 +1,300 @@
+*{
+	margin: 0;
+	padding: 0;
+	color: rgba(255,250,200,1);
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+@font-face{
+	font-family:logo;
+	src:url(../fonts/WhiteOleanderSlanted.ttf);
+}
+
+
+.classify_nav{
+	width: 100%;
+	background-color: rgba(95,95,95,0.8);
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+.classify_nav>ul{
+    width: 1000px;
+    height: 160px;
+    margin: 0 auto;
+    position: relative; 
+}
+.classify_nav>ul>li{
+	float: left;
+	width: 200px;
+	height: 150px;
+	margin-top: 10px;
+	color: rgba(23,15,67,1); 
+	text-align: center;
+	line-height: 50px;
+}
+.classify_nav>ul>#logo{
+	height: 120px;
+	width: 200px;
+	font-family: logo;
+	font-size: 80px;
+	line-height: 120px;
+	font-weight: bold;
+	color: #f40;
+	text-shadow: 3px 3px #000;
+	position: absolute;
+	top: 20px;
+	left: -20%;
+}
+.classify_nav>ul>#return{
+	height: 120px;
+	width: 120px;
+	cursor: pointer;	
+    position: absolute;
+    top: 10px;
+    right: -15%;
+}
+.classify_nav>ul>#return>p{
+	text-align: center;
+	line-height: 40px;
+}
+.classify_nav>ul>#return>img{
+	width: 80px;
+}
+.classify_nav>ul>li>ul{
+	width: 180px;
+	height: 100px;
+	margin: 0 auto;
+	background-color: #444;
+}
+.classify_nav>ul>li>ul>li{
+	float: left;
+	width: 80px;
+	height: 40px;
+	margin: 5px 5px;
+	color: #eee;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+	border-radius: 25px;
+	transition: all 0.5s;
+}
+.classify_nav>ul>li>ul>li:hover{
+	color: #f40;
+	background-color: #000;
+}
+
+
+
+.container{
+	width: 1200px;
+	margin: 30px auto;
+	background-color: rgba(123,123,123,0.3);
+	border: 2px solid #f40;
+	border-top: none;
+	border-radius: 30px;
+}
+.container>h1{
+	display: block;
+	width: 100%;
+	height: 100px;
+	font-size: 35px;
+	text-align: center;
+	line-height: 100px;
+}
+.container>p{
+	display: block;
+	width: 100%;
+	height: 60px;
+	font-size: 23px;
+	text-align: center;
+	line-height: 60px;
+}
+.container>ul{
+	width: 1200px;
+	height: 1200px;
+}
+.container>ul>li{
+	float: left;
+	height: 250px;
+	width: 550px;
+	margin: 25px 25px;
+	/*border: 2px solid #000;*/
+}
+.container>ul>li>.music{
+	float: left;
+	width: 250px;
+	height:250px; 
+	border-radius: 50%;
+	overflow: hidden; 
+	position: relative;
+	transition: all 0.6s;
+}
+.container>ul>li>.music>img{
+	width: 250px;
+	transition: all 1s;
+}
+
+.container>ul>li>.music>.bottom{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    transition: all 0.5s;         
+}
+
+.container>ul>li>.music>.bottom>img{    /*播放图标（隐藏）*/
+	display: block;
+	width: 60px;
+	margin: 95px auto;
+	cursor: pointer;
+	transition: all 0.4s;
+}
+.container>ul>li>.music:hover{          /*hover 改变样式*/
+	box-shadow: 0 0 20px -5px #000;
+}
+.container>ul>li>.music:hover>img{        
+	filter: blur(2px);                  
+}
+.container>ul>li>.music:hover .bottom{    
+	top: 0;
+}
+.container>ul>li>.music>.bottom>img:hover{
+	width: 70px;
+	margin: 90px auto;
+}
+.container>ul>li>.tru{
+	float: left;
+	height: 150px;
+	width: 300px;
+	margin: 50px 0;
+}
+.container>ul>li>.tru>p{
+	display: block;
+	height: 48.5px;
+	width: 265px;
+	border-bottom: 1.5px solid #f40;
+	margin-left: 35px;
+	font-size: 16px;
+	line-height: 65px;
+	text-shadow: 1.5px 1.5px black;
+	position: relative;
+}
+.container>ul>li>.tru>p>img{
+	/*display: block;*/
+	height: 22px;
+	position: absolute;
+	top: 22px;
+	left: -30px;
+}
+
+
+#audio{
+	width: 100%;
+	height: 150px;
+	position: fixed;
+	bottom: -75px;
+	z-index: 100;
+	transition: all 0.6s;
+}
+#audio>div{
+	width: 1300px;
+	height: 2000px;
+	margin: 0 auto;
+	position: relative;
+}
+#audio:hover{
+	bottom: 0;
+}
+#audio>div>#music-img{
+	display: block;
+	height: 150px;
+	width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px -5px #000;
+	opacity: 1;
+	transition: all 0.6s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#audio:hover>div>#music-img{
+	opacity: 0.5;
+}
+#audio>div>audio{
+	display: block;	
+	outline: none;
+	width: 950px;
+	height: 50px;
+	opacity: 0.7;
+	transition: all 0.6s;
+	position: absolute;
+	top: 75px;
+	left: 250px;
+}
+#audio>div>div{
+	width: 95px;
+	height: 45px;
+	border: 2.5px solid #f40;
+	border-radius: 10px;
+	background-color: rgba(255, 68, 0, 0.5);
+	color: #eee;
+	font-weight: bold;
+	line-height: 45px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.4s;
+	position: absolute;
+	top: 75px;
+}
+#audio>div>#pre{
+	left: 150px;
+}
+#audio>div>#next{
+	right: 0;
+}
+#audio>div>div:hover{
+	color: #000;
+	background-color: #f40;
+}
+#audio>div>#musicDel{
+	display: block;
+	height: 40px;
+	width: 500px;
+	color: #f40;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 40px;
+	text-shadow: 1.5px 1.5px #000;
+	position: absolute;
+	top: 35px;
+	left: 160px;
+}
+#audio>div>#songList{
+	width: 250px;
+	height: 270px;
+	transition: all 0.5s;
+	position: absolute;
+	top: -150px;
+	left: -400px;
+}
+#audio>div>#songList>li{
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	text-shadow: 1px 1px black;
+}
+#audio:hover>div>#songList{
+	left: -100px;
+}
+
+
+
+#bg{
+	position: fixed;
+	top: 0;
+	z-index: -100;
+	width: 100%;
+}

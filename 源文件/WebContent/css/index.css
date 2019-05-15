@@ -1,0 +1,185 @@
+html{
+	padding: 0;
+	margin: 0;
+}
+body{
+	width: 100%;
+	min-width: 1000px;
+	min-height: 500px;
+	margin: 0;
+	padding: 0;
+}
+input{
+	outline: none;
+	display: block;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+@font-face{
+	font-family:logo;
+	src:url(../fonts/WhiteOleanderSlanted.ttf);
+}
+@font-face{
+	font-family: shouxie;
+	src:url(../fonts/shouxie.ttf);
+}
+@font-face{
+	font-family:Roboto-Light;
+	src:url(../fonts/Roboto-Light.ttf);
+}
+@font-face{
+	font-family: sss;
+	src:url(../fonts/02.ttf);
+}
+::-webkit-input-placeholder {
+	color:  rgba(255, 68, 0, 0.5);
+}
+.container{
+	height: 450px;
+	width: 1002px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -225px;
+	margin-left: -501px;
+}
+.container>.change_container{
+	height: 400px;
+	width: 1000px;
+	border-right: 1.5px solid rgba(255,250,200,1);
+	border-left: 1.5px solid rgba(255,250,200,1);
+	border-radius: 25px; 
+	margin: 25px auto;
+}
+.container>.change_container>h2{
+	display: block;
+	height: 90px;
+	width: 40%;
+	margin: 30px 5% 10px 5%;
+	font-family: Roboto-Light;
+	line-height: 90px;
+	font-size: 40px;
+	color: rgba(255,250,200,1);
+	float: left;	
+}
+.container>.change_container>h2>span{
+	font-family: logo;
+	font-size: 80px;
+	color: #f40;
+	text-shadow: 3px 3px #000;
+}
+.container>.change_container>p{
+	display: block;
+	height: 110px;
+	width: 40%;
+	margin: 10px 5% 10px 5%;
+	font-family: shouxie;
+	font-weight: bold;
+	line-height: 30px;
+	text-shadow: 2px 2px #000;
+	font-size: 30px;
+	color: rgba(255,250,200,1);
+    float: left;   
+}
+.container>.change_container>button{
+	width: 15%;
+	height: 50px;
+	margin: 20px 5% 10px 30%;
+	outline: none;
+	font-family: sss;
+	font-size: 20px;
+	background: rgba(255,250,200,0.2);
+	color: rgba(255,250,200,1);
+	border: 2px solid rgba(255,250,200,1);
+	cursor: pointer;
+	transition: all 0.4s; 
+    float: left;
+}
+.container>.change_container>button:hover{
+	background: rgba(255,250,200,1);
+	color: black;
+}
+.container>.form_container{
+	padding: 0;
+	height: 450px;
+	width: 450px;
+	/*background-color:  rgba(0,0,0,0.3);*/
+	background: url(../img/music.jpg);
+	background-size: 700px auto;
+	background-position: 60% 20%;
+	box-shadow: 0 0 20px -5px #000;
+	position: absolute;
+	top: 50%;	
+	left: 50%;
+	margin-top: -225px;
+	border-radius: 25px; 
+	transition: all 0.6s; 
+}
+.container>.form_container>form>h1{
+	font-family: Roboto-Light;
+	color: rgba(255, 68, 0, 1);
+	margin-top: 100px;
+	margin-left: 50px;
+	letter-spacing: 2px;
+}
+.container>.form_container>form>.input_lebal{
+	position: relative;
+	height: 35px;
+	width: 350px;
+	margin: 0px auto;
+	font-family: Roboto-Light;
+	font-size: 20px;
+	color: white;
+}
+.container>.form_container>form>.judge{
+	height: 18px;
+	width: 350px;
+	margin:1px auto;
+	text-align: right;
+	color: red;
+	font-size: 17px;
+	font-weight: bold;
+}
+.container>.form_container>form>.input_lebal>img{
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	right: 0;
+	bottom: 5px;
+}
+.container>.form_container>form>.input_lebal>input{
+	height: 35px;
+	width: 350px;
+	border: none;
+	background: none;
+	outline: none;
+	border-bottom: 1.5px solid #000;
+	color: #000;
+	font-size: 17px;
+	float: right;
+}
+.container>.form_container>form>button{
+	width: 150px;
+	height: 50px;
+	margin: 35px 50px 10px 250px;
+	outline: none;
+	font-family: sss;
+	font-size: 20px;
+	background: rgba(255, 68, 0, 0.2);
+	color: rgba(255, 68, 0, 1);
+	border: 2px solid rgba(255, 68, 0, 1);
+	cursor: pointer;
+	transition: all 0.4s; 
+}
+.container>.form_container>form>button:hover{
+	background: rgba(255, 68, 0, 1);
+	color: black;
+}
+#bg{
+	display: block;
+	width: 100%;
+	min-width: 1200px;
+}

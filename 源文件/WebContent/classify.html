@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>music classify</title>
+	<link rel="stylesheet" type="text/css" href="css/classify.css">
+</head>
+<body>
+	<div class="classify_nav">		
+		<ul>
+			<li id="logo">@Fsm</li>
+			<li id="return" onclick="toHomePage()">
+				<p>返回主页</p>
+				<img src="icon/return.png">
+			</li>
+			<li><h3>语种</h3>
+				<ul>
+					<li onclick="changePage(this)" value="体面;我们;我真的受伤了;爱了很久的朋友;平凡之路;奇迹再现;孤单心事;很好听的纸短情长">中文</li>
+					<li onclick="changePage(this)" value="Faded;I Am You;Love The Way You Lie;We Don't Talk Anymore;Faded;I Am You;Love The Way You Lie;We Don't Talk Anymore">英文</li>
+					<li onclick="changePage(this)" value="一生所爱;浮夸;春夏秋冬;够钟;无赖;够钟;春夏秋冬;一生所爱">粤语</li>
+					<li onclick="changePage(this)" value="这份爱;Stay With Me;脸红的思春期;Way Back Home;My Destiny;Beautiful Now;Stay With Me;这份爱">韩语</li>
+				</ul>
+			</li>
+			<li><h3>流派</h3>
+				<ul>
+					<li onclick="changePage(this)" value="孤单心事;Way Back Home;Stay With Me;这份爱;I Am You;够钟;Faded;脸红的思春期">流行</li>
+					<li onclick="changePage(this)" value="Trip;The truth that you leave;Because of You;You;Journey;Flower Dance;Refrain;A Little Story">纯音乐</li>
+				</ul>
+			</li>
+			<li><h3>主题</h3>
+				<ul>
+					<li onclick="changePage(this)" value="Stay With Me;My Destiny;体面;我们;一生所爱;爱了很久的朋友;这份爱;奇迹再现">影视原声</li>
+					<li onclick="changePage(this)" value="Love The Way You Lie;I Am You;这份爱;Faded;We Don't Talk Anymore;My Destiny;Stay With Me;Way Back Home">国外风标</li>
+					<li onclick="changePage(this)" value="一生所爱;春夏秋冬;我真的受伤了;奇迹再现;春夏秋冬;一生所爱;一生所爱;春夏秋冬">经典之声</li>
+				</ul>
+			</li>
+			<li><h3>心情</h3>
+				<ul>
+					<li onclick="changePage(this)" value="无赖;够钟;体面;我们;爱了很久的朋友;一生所爱;我真的受伤了;The truth that you leave">伤感</li>
+					<li onclick="changePage(this)" value="The truth that you leave;一生所爱;Because of You;You;Journey;Flower Dance;Refrain;Tassel">安静</li>
+					<li onclick="changePage(this)" value="I Am You;平凡之路;Trip;奇迹再现;平凡之路;Trip;奇迹再现;浮夸">励志</li>
+				</ul>
+			</li>
+			<li><h3>场景</h3>
+				<ul>
+					<li onclick="changePage(this)" value="Trip;Trip;Trip;Trip;Trip;Trip;Trip;Trip">学习</li>
+					<li onclick="changePage(this)" value="春夏秋冬;一生所爱;I Am You;孤单心事;很好听的纸短情长;很好听的纸短情长;很好听的纸短情长;很好听的纸短情长">睡前</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<div class="container">
+		<h1 id="topic">伤感</h1>
+		<p  id="topicDel">摸摸头，乖</p>
+		<ul>
+			<li class="musicBox">
+				<div class="music">
+					<img src="img/体面.jpg">
+        		   	<div class="bottom">
+        		   		<img src="icon/bofang2.png" onClick="openPlayer(this)"  value="0">
+        		   		<!-- value值代表该歌曲的序号 -->
+        		   	</div>
+				</div>
+				<div class="tru">
+					<p>
+						<img src="icon/gequming.png">
+						<font>歌曲：体面</font>
+					</p>
+					<p>
+						<img src="icon/geshou.png">
+					    <font>歌手：于文文</font>
+					</p>
+					<p>
+						<img src="icon/bofangliang.png">
+					    <font>播放量：30239万</font>
+					</p>
+				</div>
+			</li>
+			<li class="musicBox">
+				<div class="music">
+					<img src="img/我们.jpg">
+        		   	<div class="bottom">
+        		   		<img src="icon/bofang2.png" onClick="openPlayer(this)"  value="1">  
+        		   	</div>
+				</div>
+				<div class="tru">
+					<p>
+						<img src="icon/gequming.png">
+						<font>歌曲：我们</font>
+					</p>
+					<p>
+						<img src="icon/geshou.png">
+					    <font>歌手：陈奕迅</font>
+					</p>
+					<p>
+						<img src="icon/bofangliang.png">
+					    <font>播放量：34119万</font>
+					</p>
+				</div>
+			</li>
+			<li class="musicBox">
+				<div class="music">
+					<img src="img/爱了很久的朋友.jpg">
+        		   	<div class="bottom">
+        		   		<img src="icon/bofang2.png" onClick="openPlayer(this)"  value="2">
+        		   	</div>
+				</div>
+				<div class="tru">
+					<p>
+						<img src="icon/gequming.png">
+						<font>歌曲：爱了很久的朋友</font>
+					</p>
+					<p>
+						<img src="icon/geshou.png">
+					    <font>歌手：田馥甄</font>
+					</p>
+					<p>
+						<img src="icon/bofangliang.png">
+					    <font>播放量：22222万</font>
+					</p>
+				</div>
+			</li>
+			<li class="musicBox">
+				<div class="music">
+					<img src="img/一生所爱.jpg">
+        		   	<div class="bottom">
+        		   		<img src="icon/bofang2.png" onClick="openPlayer(this)"  value="3">
+        		   	</div>
+				</div>
+				<div class="tru">
+					<p>
+						<img src="icon/gequming.png">
+						<font>歌曲：一生所爱</font>
+					</p>
+					<p>
+						<img src="icon/geshou.png">
+					    <font>歌手：卢冠廷/莫文蔚</font>
+					</p>
+					<p>
+						<img src="icon/bofangliang.png">
+					    <font>播放量：30223万</font>
+					</p>
+				</div>
+			</li>
+			<li class="musicBox">
+				<div class="music">
+					<img src="img/我真的受伤了.jpg">
+        		   	<div class="bottom">
+        		   		<img src="icon/bofang2.png" onClick="openPlayer(this)"  value="4">
+        		   	</div>
+				</div>
+				<div class="tru">
+					<p>
+						<img src="icon/gequming.png">
+						<font>歌曲：我真的受伤了</font>
+					</p>
+					<p>
+						<img src="icon/geshou.png">
+					    <font>歌手：张学友</font>
+					</p>
+					<p>
+						<img src="icon/bofangliang.png">
+					    <font>播放量：34119万</font>
+					</p>
+				</div>
+			</li>
+			<li class="musicBox">
+				<div class="music">
+					<img src="img/The truth that you leave.jpg">
+        		   	<div class="bottom">
+        		   		<img src="icon/bofang2.png" onClick="openPlayer(this)"  value="5">
+        		   	</div>
+				</div>
+				<div class="tru">
+					<p>
+						<img src="icon/gequming.png">
+						<font>歌曲：The truth that you leave</font>
+					</p>
+					<p>
+						<img src="icon/geshou.png">
+					    <font>歌手：Pianoboy高至豪</font>
+					</p>
+					<p>
+					    <img src="icon/bofangliang.png">
+					    <font>播放量：45233万</font>
+					</p>
+				</div>
+			</li>
+			<li class="musicBox">
+				<div class="music">
+					<img src="img/体面.jpg">
+        		   	<div class="bottom">
+        		   		<img src="icon/bofang2.png" onClick="openPlayer(this)"  value="6">
+        		   	</div>
+				</div>
+				<div class="tru">
+					<p>
+						<img src="icon/gequming.png">
+						<font>歌曲：体面</font>
+					</p>
+					<p>
+						<img src="icon/geshou.png">
+					    <font>歌手：于文文</font>
+					</p>
+					<p>
+						<img src="icon/bofangliang.png">
+					    <font>播放量：30239万</font>
+					</p>
+				</div>
+			</li>
+			<li class="musicBox">
+				<div class="music">
+					<img src="img/我们.jpg">
+        		   	<div class="bottom">
+        		   		<img src="icon/bofang2.png" onClick="openPlayer(this)"  value="7">
+        		   	</div>
+				</div>
+				<div class="tru">
+					<p>
+						<img src="icon/gequming.png">
+						<font>歌曲：我们</font>
+					</p>
+					<p>
+						<img src="icon/geshou.png">
+					    <font>歌手：陈奕迅</font>
+					</p>
+					<p>
+						<img src="icon/bofangliang.png">
+					    <font>播放量：34119万</font>
+					</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div id="audio">
+		<div>
+			<audio id="music" src=""  controls="controls"></audio>  
+		    <img id="music-img" src="icon/music.png">    
+            <div id="pre" onclick="pre()">上一曲</div>         
+            <div id="next" onclick="next()">下一曲</div>
+            <span id="musicDel"></span>      
+            <ul id="songList">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>          
+        </div>    
+	</div>
+
+	<img id="bg" src="img/bg1.jpg">
+   <script type="text/javascript" src="js/classify.js"></script>
+</body>
+</html>

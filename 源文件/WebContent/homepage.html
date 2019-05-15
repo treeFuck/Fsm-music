@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="css/homepage.css">
+</head>
+<body>  
+	<div id="nav">              <!-- 导航栏 -->
+		<ul>
+			<li id="logo">@Fsm</li>
+			<li id="homepage" onclick="javascript:location.href='homepage.html'">音乐馆</li>
+			<li id="mymusic" onclick="javascript:location.href=''">我的音乐</li>
+			<li id="classify" onclick="toClassify()">分类歌单</li>
+			<li id="search"  >
+                <input id="searchInput" type="text"  placeholder="搜索歌曲" onkeyup="searchAll()" onclick="searchAll()" autocomplete="off" maxlength="20">
+                <ul id="searchResult" onclick="freesearchResult()"  ></ul>
+            </li>
+			<li id="user" onclick="javascript:location.href='login.html'">请登录</li>
+		</ul>
+	</div>
+
+	<div id="content">         <!-- 歌单推荐（轮播图） -->
+     	<div id="recommend-list">
+     		<h2>歌单推荐</h2>
+     		<p>也许听着听着就喜欢上了呢</p>
+            <ul id="photos">  <!-- 轮播图图片列表 -->
+            	<li class="warp"><img id="listOnClik" src="icon/bofang2.png" onClick="openPlayer(this)"  value="够钟;无赖;浮夸"></li>
+                <li id='list1' class="photoslist"><img src='img/1.jpg'></li>
+                <li id='list2' class="photoslist"><img src='img/2.jpg'></li>
+                <li id='list3' class="photoslist"><img src='img/3.jpg'></li>
+                <li id='list4' class="photoslist"><img src='img/4.jpg'></li>
+                <li id='list5' class="photoslist"><img src='img/5.jpg'></li>
+                <li id='list6' class="photoslist"><img src='img/6.jpg'></li>
+                <li id='list7' class="photoslist"><img src='img/7.jpg'></li>
+                <li id='list8' class="photoslist"><img src='img/8.jpg'></li>
+            </ul>
+            <ul id="arrows">  <!-- 换页按钮 -->
+            	<li id='leftarrow' title='left' onClick='prePic()'><</li>
+            	<li id='rightarrow' title='right' onClick='nextPic()'>></li>
+            </ul>
+            <ul id="linebar"> <!-- 下标 -->
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            	<li class="bar"></li>
+            </ul>
+        </div>              
+        <script type="text/javascript" src="js/recommend-list.js"></script> <!-- 轮播图实现js -->
+
+	    <div id="recommend-song">    <!-- 单曲推荐 -->
+	    	<h2>单曲推荐</h2>
+     		<p>相信总会遇见值得自己单曲循环一万遍的那一首</p>  
+            <div class="left">
+        	    <div class="song">	  
+                	<img src="img/我们.jpg">
+                	<div class="top"> 
+        	    		<div class="songName">《我们》</div>
+        	    		<div class="songauthor">——陈奕迅</div>
+        	    	</div>
+        	    	<div class="bottom">
+        	    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="我们">
+        	    	</div>
+                </div>
+                <div class="music-write">  <!-- 制造行 -->
+                	<div></div>
+                	<div></div>
+                	<div></div>
+                	<div></div>
+                </div>
+                <div class="music-letter"><br>要是爱你爱得再少些，<br>话就可以多说些。</div>
+            </div>
+            <div class="right">
+            	<div class="music-write">
+            		<div></div>
+                	<div></div>
+                	<div></div>
+                	<div></div>
+            	</div>
+                <div class="music-letter"><br>你走也是诗，躺也成文，怎有烟火浊了身。<br>我糟糠也食，五谷也认，跳一场花旦笑捧。</div>
+                <div class="song">	     
+                	<img src="img/I Am You.jpg">
+                	<div class="top">
+        	    		<div class="songName">《I Am You》</div>
+        	    		<div class="songauthor">——Kim Taylor</div>
+        	    	</div>
+        	    	<div class="bottom">
+        	    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="I Am You">
+        	    	</div>
+                </div>    
+            </div>
+            <div class="left">
+                <div class="song">	        	     
+    	        	<img src="img/Stay With Me.jpg">
+    	        	<div class="top">
+    		    		<div class="songName">《Stay With Me》</div>
+    		    		<div class="songauthor">——灿烈/Punch</div>
+    		    	</div>
+    		    	<div class="bottom">
+    		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="Stay With Me">
+    		    	</div>
+    	        </div>
+    	        <div class="music-write">
+    	        	<div></div>
+                	<div></div>
+                	<div></div>
+                	<div></div>
+    	        </div>	
+    	        <div class="music-letter">跟你在一起的时光都很耀眼，<br>因为天气好，因为天气不好，因为天气刚刚好，<br>每一天，<br>都很美好。</div>    
+            </div>
+            <div class="right">
+            	<div class="music-write">
+            		<div></div>
+                	<div></div>
+                	<div></div>
+                	<div></div>
+            	</div>
+    	        <div class="music-letter"><br>不戴金箍，如何救你；<br>戴了金箍，如何爱你。</div>	      		         	
+                <div class="song">	     
+                	<img src="img/一生所爱.jpg">
+                	<div class="top">
+        	    		<div class="songName">《一生所爱》</div>
+        	    		<div class="songauthor">——卢冠廷/莫文蔚</div>
+        	    	</div>
+        	    	<div class="bottom">
+        	    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="一生所爱">
+        	    	</div>
+                </div> 
+            </div>     		
+	    </div>
+
+	    <div id="recommend-topic">    <!-- 主题推荐 -->
+	    	<h2>主题推荐</h2>
+     		<p>主题下的歌曲不会孤单，希望在这里的你不要孤独</p>
+	    	<div>
+    		    <div class="songSort">
+             		<h2>影视原声</h2>
+            		<div>
+             			<p>一首歌的时间，<br>我还你一个故事。</p><img src="icon/bofang1.png" title="播放全部" onClick="openPlayer(this)"  value="体面;我们;奇迹再现">
+             		</div>
+         		</div>
+    		    <ul>
+        			<li>
+        			    <img src="img/体面.jpg">
+        			    <div class="top">
+        			    	<div class="songName">《体面》</div>
+        			    	<div class="songauthor">——于文文</div>
+        			    </div>
+        			    <div class="bottom">
+        			    	<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="体面">
+        			    </div>
+        			</li>
+        		    <li>	     
+        	        	<img src="img/我们.jpg">
+        	        	<div class="top">
+        		    		<div class="songName">《我们》</div>
+        		    		<div class="songauthor">——陈奕迅</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="我们">
+        		    	</div>
+        		    </li>
+        		    <li>	     
+        	        	<img src="img/奇迹再现.jpg">
+        	        	<div class="top">
+        		    		<div class="songName">《奇迹再现》</div>
+        		    		<div class="songauthor">——毛毛</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="奇迹再现">
+        		    	</div>
+        	        </li>		             		     
+        	    </ul>
+        	</div>
+
+        	<div>
+        	    <div class="songSort">
+           			<h2>国外风标</h2>     			
+           			<div>
+             			<p>世界有圈，<br>音乐无界。</p><img src="icon/bofang1.png" title="播放全部" onClick="openPlayer(this)"  value="这份爱;Love The Way You Lie;I Am You">
+             		</div>
+             	</div>
+        	    <ul>
+        	    	<li>		      
+        	        	<img src="img/这份爱.jpg">
+        	        	<div class="top">
+        		    		<div class="songName">《这份爱》</div>
+        		    		<div class="songauthor">——Davichi</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="这份爱">
+        		    	</div>
+        	        </li>		        
+        	        <li>	     
+        	        	<img src="img/Love The Way You Lie.jpg">
+        	        	<div class="top">
+        		    		<div class="songName" style="font-size: 14px;">《Love The Way You Lie》</div>
+        		    		<div class="songauthor">——Eminem/Rihanna</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="Love The Way You Lie">
+        		    	</div>
+        	        </li>
+        	        <li>	     
+        	        	<img src="img/I Am You.jpg">
+        	        	<div class="top">
+        		    		<div class="songName">《I Am You》</div>
+        		    		<div class="songauthor">——Kim Taylor</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="I Am You">
+        		    	</div>
+        	        </li>		      		         			      
+        	    </ul>
+        	</div>
+        	
+        	<div>
+        	    <div class="songSort">
+            		<h2>经典之声</h2>    			
+           			<div>
+           				<p>年少听不懂，<br>听懂已非少年。</p><img src="icon/bofang1.png" title="播放全部" onClick="openPlayer(this)"  value="春夏秋冬;一生所爱;我真的受伤了">
+            		</div>
+           		</div>
+        	    <ul>
+        	        <li>	     
+        	        	<img src="img/春夏秋冬.jpg">
+        	        	<div class="top">
+        		    		<div class="songName">《春夏秋冬》</div>
+        		    		<div class="songauthor">——张国荣</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="春夏秋冬">
+        		    	</div>
+        	        </li>
+        	        <li>	     
+        	        	<img src="img/一生所爱.jpg">
+        	        	<div class="top">
+        		    		<div class="songName">《一生所爱》</div>
+        		    		<div class="songauthor">——卢冠廷/莫文蔚</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="一生所爱">
+        		    	</div>
+        	        </li>
+        	        <li>	     
+        	        	<img src="img/我真的受伤了.jpg">
+        	        	<div class="top">
+        		    		<div class="songName">《我真的受伤了》</div>
+        		    		<div class="songauthor">——张学友</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="我真的受伤了">
+        		    	</div>
+        	        </li>       
+        	    </ul>
+        	</div>
+        	
+        	<div>
+        	    <div class="songSort">
+            		<h2>特别推荐</h2>    			
+            		<div>
+            			<p>阿弥陀佛,<br>摸摸头,<br>乖。</p><img src="icon/bofang1.png" title="播放全部" onClick="openPlayer(this)"  value="很好听的纸短情长;The truth that you leave;孤单心事">
+            		</div>
+            	</div>
+        		<ul>
+        	        <li>	
+        	        	<img src="img/很好听的纸短情长.jpg">
+        	        	<div class="top">
+        		    		<div class="songName">《很好听的纸短情长》</div>
+        		    		<div class="songauthor">——未知</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)" value="很好听的纸短情长">
+        		    	</div>
+        		    </li>		   
+        	        <li>	     
+        	        	<img src="img/The truth that you leave.jpg">
+        	        	<div class="top">
+        		    		<div class="songName" style="font-size: 14px;">《The truth that you leave》</div>
+        		    		<div class="songauthor">——Pianoboy高至豪</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="The truth that you leave">
+        		    	</div>
+        	        </li>
+        	        <li>	     
+        	        	<img src="img/孤单心事.jpg">
+        	        	<div class="top">
+        		    		<div class="songName">《孤单心事》</div>
+        		    		<div class="songauthor">——颜人中</div>
+        		    	</div>
+        		    	<div class="bottom">
+        		    		<img src="icon/bofang3.png" onClick="openPlayer(this)"  value="孤单心事">
+        		    	</div>
+        	        </li>        
+        	    </ul>
+        	</div>        	
+	    </div>
+	    <div id="bottom"> <!-- 底部 -->
+		<p class="en">Thank you for your use.</p>
+		<p class="ch">幸与君相逢</p>
+		<p class="en">Looking forward to our next meeting</p>
+		<p class="ch">望与君相期</p>
+		<div>——<span>@Fsm</span></div>
+	</div>  
+	</div>
+	
+	<img id="bg" src="img/bg5.jpg">	
+	<div id="audio">
+		<div>
+			<audio id="music" src=""  controls="controls"></audio>  
+		    <img id="music-img" src="icon/music.png">    
+            <div id="pre" onclick="pre()">上一曲</div>         
+            <div id="next" onclick="next()">下一曲</div>
+            <span id="musicDel"></span>      
+            <ul id="songList">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>   
+        </div>    
+	</div>
+	<script type="text/javascript" src="js/homepage.js"></script>
+</body>
+</html>
